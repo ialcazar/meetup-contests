@@ -20,6 +20,8 @@
     "devDependencies":{
         "expect.js":"0.1.x",
         "sinon":"1.4.x",
-        "mocha":"1.4.x"
+        "mocha":"1.4.x",
+        "grunt":"0.3.x",
+        "grunt-simple-mocha":"0.1.x"
     }
 }
