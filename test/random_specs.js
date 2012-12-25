@@ -5,22 +5,26 @@ var expect = require('expect.js'),
     random = require('../lib/random.js');
 
 
-describe( 'Generate a Random' , function(){
+describe( 'Random' , function(){
    var  expected,
         numbersGenerated,
         numberRepetition;
    beforeEach(function(){
-       console.log("beforeEach");
        numbersGenerated = [];
        numberRepetition = 0;
+       random.clean();
 
    });
-   it('should return a random number between 0 and 9', function(){
+
+   it('Is empty', function(){
+      expect(random.isEmpty()).to.be.ok();
+   });
+   it('Should return a random number between 0 and 9', function(){
 
        for(var i=0;i<9;i++){
 
            expected = random.generate(9);
-           console.log(expected);
+
            if(numbersGenerated.indexOf(expected)!==-1){
                numberRepetition++;
            }else{
@@ -34,9 +38,7 @@ describe( 'Generate a Random' , function(){
            expect(expected).to.be.lessThan(9);
 
        }
-
-       console.log("->"+numbersGenerated);
-       expect(numberRepetition).to.be.lessThan(3);
+       expect(numberRepetition).to.be(0);
 
 
    });
