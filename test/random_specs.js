@@ -6,20 +6,37 @@ var expect = require('expect.js'),
 
 
 describe( 'Generate a Random' , function(){
+   var  expected,
+        numbersGenerated,
+        numberRepetition;
+   beforeEach(function(){
+       console.log("beforeEach");
+       numbersGenerated = [];
+       numberRepetition = 0;
 
+   });
    it('should return a random number between 0 and 9', function(){
-       var expected;
-       var numbersGenerated = [];
-       for(var i=0;i<9;i++){
-           expected = random.generate(9);
 
-           numbersGenerated.push(expected);
+       for(var i=0;i<9;i++){
+
+           expected = random.generate(9);
+           console.log(expected);
+           if(numbersGenerated.indexOf(expected)!==-1){
+               numberRepetition++;
+           }else{
+               numbersGenerated.push(expected);
+           }
+
+
 
            expect(expected).to.be.a('number');
+           expect(expected).to.be.greaterThan(-1);
            expect(expected).to.be.lessThan(9);
 
-           //TODO: Compare if expected exists in the numbersGenerated array
        }
+
+       console.log("->"+numbersGenerated);
+       expect(numberRepetition).to.be.lessThan(3);
 
 
    });
