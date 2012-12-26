@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ialcazar/meetup-contests.png?branch=master)](https://travis-ci.org/ialcazar/meetup-contests)
+[![Build Status](https://secure.travis-ci.org/ialcazar/meetup-contests.png)](https://travis-ci.org/ialcazar/meetup-contests)
 
 A script to perform contests with Meetup Events.
 
